@@ -4,4 +4,39 @@
 body {
   font-family: Poppins, "Source Sans Pro", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
+  min-height: 100vh;
+  background: #f8f8f8;
+  margin: 0;
+}
+
+main{
+  display: block;
+}
+
+ul{
+  list-style: none;
+}
+
+template {
+  display: none;
+}
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+img {
+  border-style: none;
+}
+a {
+  color: inherit;
+}
+
+a:focus {
+  text-decoration: none;
 }

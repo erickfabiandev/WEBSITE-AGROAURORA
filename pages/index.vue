@@ -1,21 +1,16 @@
 <template>
   <div>
-    <h1> soy Home</h1>
+    Soy Home
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  setup () {
-    
-
-    return {}
-  }
-})
+<script setup>
+  definePageMeta({
+    name: 'Home',
+    layout: 'default'
+  })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
