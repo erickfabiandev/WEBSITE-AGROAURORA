@@ -1,21 +1,29 @@
 <template>
-  <div>
-
-  </div>
+  <footer class="footer">
+    <div class="footer-wraper">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  setup () {
-    
-
-    return {}
-  }
-})
+  setup() {
+    return {};
+  },
+});
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.footer {
+  padding-inline: 1rem;
+}
 
+.footer-wraper {
+}
 </style>

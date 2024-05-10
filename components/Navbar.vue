@@ -1,139 +1,139 @@
 <template>
-  <nav :class="{'menu': true, 'active': isScroll}">
+  <nav :class="{ menu: true, active: isScroll }">
     <div class="menu_container">
       <NuxtLink to="/">
-        <img src="@/assets/img/logo.png" class="logo" alt="log-agroaurora"/>
+        <img src="@/assets/img/logo.png" class="logo" alt="log-agroaurora" />
       </NuxtLink>
       <div class="menu_right">
         <ul class="menu_right_wrapper">
           <li class="menu_item">
-            <NuxtLink to="/conocenos"> 
+            <NuxtLink to="/conocenos">
               <span>Conócenos</span>
             </NuxtLink>
-          </li>          
+          </li>
           <li class="menu_item">
-            <NuxtLink to="/productos"> 
+            <NuxtLink to="/productos">
               <span>Productos</span>
             </NuxtLink>
           </li>
           <li class="menu_item">
-            <NuxtLink to="/certificaciones"> 
+            <NuxtLink to="/certificaciones">
               <span>Certificaciones</span>
             </NuxtLink>
-          </li>          
+          </li>
           <li class="menu_item">
-            <NuxtLink to="/enfoque-sostenible"> 
+            <NuxtLink to="/enfoque-sostenible">
               <span>Enfoque sostenible</span>
             </NuxtLink>
-          </li>          
+          </li>
           <li class="menu_item">
-            <NuxtLink to="/noticias"> 
+            <NuxtLink to="/noticias">
               <span>Noticias</span>
             </NuxtLink>
           </li>
         </ul>
       </div>
-    </div>   
+      <div class="menu_right_mobile">
+        <img
+          src="@/assets/img/menu-burger.svg"
+          class="menu-burger"
+          alt="log-agroaurora"
+          width="30"
+        />
+      </div>
+    </div>
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  setup () {
-    const isScroll = ref<Boolean>(false)
+  setup() {
+    const isScroll = ref<Boolean>(false);
 
     const handleScroll = () => {
-      isScroll.value = window.scrollY > 0 ? true : false
-    }
+      isScroll.value = window.scrollY > 0 ? true : false;
+    };
 
     onMounted(() => {
-      window.addEventListener('scroll', handleScroll)
-    })
+      window.addEventListener("scroll", handleScroll);
+    });
 
     onBeforeUnmount(() => {
-      window.removeEventListener('scroll', handleScroll)
-    })
+      window.removeEventListener("scroll", handleScroll);
+    });
 
     return {
-      isScroll
-    }
-  }
-})
+      isScroll,
+    };
+  },
+});
 </script>
 
 <style scoped lang="scss">
-.active{
+.active {
   background-color: var(--agroaurora-color-1);
+  box-shadow: 0 4px 4px 0 var(--agroaurora-color-19);
 }
-.menu{  
+.menu {
   position: sticky;
   z-index: 10;
   height: 80px;
+  padding-inline: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  &_container{
+  &_right {
+    display: none;
+  }
+  &_right_mobile {
+    display: block;
+  }
+
+  &_container {
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     margin: 0 auto;
+    position: relative;
   }
-  
-  &_right_wrapper{
+
+  &_right_wrapper {
     list-style: none;
     display: flex;
     gap: 1.5rem;
   }
 
-  &_item{
+  &_item {
     color: var(--agroaurora-color-3);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    text-shadow: var(--agroaurora-color-19) 0 4px 4px;
-    &:hover{
+    &:hover {
       color: var(--agroaurora-color-2);
     }
 
-    a{      
+    a {
       text-decoration: none;
     }
-    
   }
 }
-.logo{
-  width:  220px;
+.logo {
+  width: 220px;
 }
 
-@media (min-width: 576px) {
-  .menu_container{
-    max-width: 540px;
-  }
-}
+@include set-container-width(".menu");
 
 @media (min-width: 768px) {
-  .menu_container{
-    max-width: 720px;
+  .menu_right {
+    display: block;
+  }
+  .menu_right_mobile {
+    display: none;
   }
 }
-
-@media (min-width: 992px) {
-  .menu_container{
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .menu_container{
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .menu_container{
-    max-width: 1320px;
-  }
-}
-
 </style>
