@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+
   app: {
     head: {
       title: 'AgroAurora | Impulsando el Desarrollo Local',
@@ -24,8 +25,20 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   css: [
     '@/assets/scss/main.scss'
   ],
-  
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss:{
+          additionalData: '@use "~/assets/scss/tools/_mixins.scss" as *;'
+        }
+      }
+    }
+  },
+
+  modules: ["vue3-carousel-nuxt"]
 })

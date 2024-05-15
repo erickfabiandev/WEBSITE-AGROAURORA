@@ -1,30 +1,27 @@
 <template>
   <div class="layout-default">
-    <Navbar/>
+    <Navbar />
     <main>
-      <slot/>
+      <slot />
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script setup>
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
-
-
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <style lang="scss" scoped>
-.layout-default{
+.layout-default {
   display: flex;
   flex-direction: column;
   background-color: var(--agroaurora-color-3);
-  max-width: 100%;
-  max-height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   flex: 1 1 auto;
-  -webkit-backface-visibility: hidden;    
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
 </style>

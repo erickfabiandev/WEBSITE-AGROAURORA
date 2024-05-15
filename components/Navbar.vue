@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ menu: true, active: isScroll }">
+  <nav :class="{ menu: true, active: isScroll || !isHome }">
     <div class="menu_container">
       <NuxtLink to="/">
         <img src="@/assets/img/logo.png" class="logo" alt="log-agroaurora" />
@@ -51,6 +51,8 @@ import { defineComponent } from "vue";
 export default defineComponent({
   setup() {
     const isScroll = ref<Boolean>(false);
+    const route = useRoute();
+    const isHome = computed(() => (route.path === "/" ? true : false));
 
     const handleScroll = () => {
       isScroll.value = window.scrollY > 0 ? true : false;
@@ -66,6 +68,7 @@ export default defineComponent({
 
     return {
       isScroll,
+      isHome,
     };
   },
 });
@@ -105,7 +108,7 @@ export default defineComponent({
   &_right_wrapper {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   &_item {
@@ -128,7 +131,7 @@ export default defineComponent({
 
 @include set-container-width(".menu");
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .menu_right {
     display: block;
   }
