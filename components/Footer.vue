@@ -5,8 +5,7 @@
         <img src="@/assets/img/logo.png" class="logo" alt="log-agroaurora" />
         <p class="description">
           Somos una empresa industrial dedicada a la producción de Alcohol Anhidro, y la
-          siembra y cultivo de caña de azúcar, bajo sistema de riego tecnificado, estará
-          estructurado en dos etapas.
+          siembra y cultivo de caña de azúcar, bajo sistema de riego tecnificado.
         </p>
       </div>
       <div class="card">
@@ -75,6 +74,13 @@
             <NuxtLink href="https://www.facebook.com/AgroAurora/" target="_blank">
               <img src="@/assets/img/brand-facebook.svg" alt="facebook-agroaurora"
             /></NuxtLink>
+          </li>
+          <li class="item-headset">
+            <NuxtLink to="https://www.agroaurorateescucha.com/" :target="'_blank'">
+              <img src="@/assets/img/headset.svg" alt="headset-agroaurora" /><span
+                >AgroAurora te escucha !</span
+              >
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -188,6 +194,20 @@ export default defineComponent({
 }
 .logo {
   width: 200px;
+}
+.item-headset {
+  background-color: var(--agroaurora-color-2);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 14px;
+  cursor: pointer;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 0.5rem;
+  }
 }
 
 @include set-container-width(".footer");

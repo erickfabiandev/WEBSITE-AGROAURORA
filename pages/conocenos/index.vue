@@ -1,11 +1,17 @@
 <template>
   <div class="about">
     <Jumbotron :backgroundClassName="backgroundClassName" :title="title" />
+    <Sumary />
+    <Mission />
+    <Maps />
   </div>
 </template>
 
 <script setup lang="ts">
 import Jumbotron from "@/components/Jumbotron.vue";
+import Sumary from "~/components/About/Sumary.vue";
+import Mission from "~/components/About/Mission.vue";
+import Maps from "~/components/About/Maps.vue";
 const title = "Conócenos";
 const backgroundClassName = "about_bg";
 </script>

@@ -14,12 +14,14 @@
         :breakpoints="breakpoints"
       >
         <Slide v-for="(certification, i) in dataCertifications" :key="i">
-          <img
-            :src="certification.urlImg"
-            :alt="certification.name"
-            width="120"
-            height="120"
-          />
+          <NuxtLink :to="certification.urlFile" :target="'_blank'">
+            <img
+              :src="certification.urlImg"
+              :alt="certification.name"
+              width="120"
+              height="120"
+            />
+          </NuxtLink>
         </Slide>
         <template #addons>
           <Navigation />
@@ -33,6 +35,7 @@
 interface typeCertification {
   name: string;
   urlImg: string;
+  urlFile: string;
 }
 interface typeSettings {
   itemsToShow: number;
@@ -44,21 +47,22 @@ const dataCertifications: typeCertification[] = [
     name: "Certificacion ISCC",
     urlImg:
       "https://res.cloudinary.com/dkddd5aky/image/upload/v1715331053/agroaurora/certificaciones_3_vw6jdd.png",
+    urlFile:
+      "https://res.cloudinary.com/dkddd5aky/image/upload/v1716782694/agroaurora/ISCC_EU_CRT_Agroaurora_080923_1_m4vyyd.pdf",
   },
   {
     name: "Certificacion ISO 45001:2018",
     urlImg:
       "https://res.cloudinary.com/dkddd5aky/image/upload/v1715331053/agroaurora/certificaciones_4_uskgpz.webp",
+    urlFile:
+      "https://res.cloudinary.com/dkddd5aky/image/upload/v1716782694/agroaurora/AENOR_45001_espa%C3%B1ol_axbxvw.pdf",
   },
   {
     name: "Certificacion ISO 9001:2015",
     urlImg:
       "https://res.cloudinary.com/dkddd5aky/image/upload/v1715331053/agroaurora/certificaciones_2_oxdirk.png",
-  },
-  {
-    name: "Certificacion RSB",
-    urlImg:
-      "https://res.cloudinary.com/dkddd5aky/image/upload/v1715331053/agroaurora/certificaciones_1_gufnou.png",
+    urlFile:
+      "https://res.cloudinary.com/dkddd5aky/image/upload/v1716782694/agroaurora/AENOR_9001_espa%C3%B1ol_f4pf8d.pdf",
   },
 ];
 
@@ -112,7 +116,6 @@ const breakpoints = {
     height: 100%;
     top: 0;
     left: -340px;
-    z-index: -1;
     transform: rotate(15deg);
     opacity: 0.3;
   }

@@ -18,7 +18,7 @@
       >
         <Slide v-for="(certification, i) in dataGalley" :key="i">
           <div class="carousel__item">
-            <img :src="certification.urlImg" class="image-container" />
+            <NuxtImg :src="certification.urlImg" class="image-container" />
           </div>
         </Slide>
       </Carousel>
@@ -32,7 +32,7 @@
       >
         <Slide v-for="(certification, i) in dataGalley" :key="i">
           <div class="carousel__item__navbar" @click="slideTo(i)">
-            <img :src="certification.urlImg" class="image-container" />
+            <NuxtImg :src="certification.urlImg" class="image-container" />
           </div>
         </Slide>
       </Carousel>

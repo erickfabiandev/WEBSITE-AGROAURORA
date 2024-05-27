@@ -40,5 +40,18 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ["vue3-carousel-nuxt"]
+  image: {
+    screens: {
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536
+    },
+  },
+
+  modules: ["vue3-carousel-nuxt", "@nuxt/image"],
+  plugins: ['@/plugins/vue3-google-map']
 })
