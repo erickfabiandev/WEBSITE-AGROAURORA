@@ -52,6 +52,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["vue3-carousel-nuxt", "@nuxt/image"],
-  plugins: ['@/plugins/vue3-google-map']
+  modules: ["vue3-carousel-nuxt", "@nuxt/image", "@nuxtjs/cloudinary"]
 })

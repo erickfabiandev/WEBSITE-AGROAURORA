@@ -1,11 +1,15 @@
 <template>
   <div class="certifications">
     <Jumbotron :backgroundClassName="backgroundClassName" :title="title" />
+    <SummaryCertificaciones />
+    <VideoPlayer />
   </div>
 </template>
 
 <script setup lang="ts">
 import Jumbotron from "@/components/Jumbotron.vue";
+import SummaryCertificaciones from "@/components/Certificaciones/SummaryCertificaciones.vue";
+import VideoPlayer from "@/components/Certificaciones/VideoPlayer.vue";
 const title = "Certificaciones";
 const backgroundClassName = "certifications_bg";
 </script>
