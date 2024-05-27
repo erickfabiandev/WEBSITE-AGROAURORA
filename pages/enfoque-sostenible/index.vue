@@ -4,6 +4,8 @@
     <Cover />
     <FuenteTrabajo />
     <ResponsabilidadSocial />
+    <ResponsabilidadAmbiente />
+    <Conexiones />
   </div>
 </template>
 
@@ -12,6 +14,8 @@ import Jumbotron from "@/components/Jumbotron.vue";
 import Cover from "@/components/SustainableApproach/Cover.vue";
 import FuenteTrabajo from "@/components/SustainableApproach/FuenteTrabajo.vue";
 import ResponsabilidadSocial from "@/components/SustainableApproach/ResponsabilidadSocial.vue";
+import ResponsabilidadAmbiente from "@/components/SustainableApproach/ResponsabilidadAmbiente.vue";
+import Conexiones from "~/components/SustainableApproach/Conexiones.vue";
 const title = "Enfoque sostenible";
 const backgroundClassName = "sustainable-approach_bg";
 </script>

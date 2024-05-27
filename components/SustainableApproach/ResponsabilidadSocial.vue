@@ -46,6 +46,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 2rem;
+    color: var(--agroaurora-color-1);
   }
   p {
     font-size: 20px;
